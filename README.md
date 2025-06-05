@@ -4,7 +4,7 @@ A code base for a project submitted as part of the **UvA Computer Vision 2 Cours
 
 This work builds upon the paper:  
  _[CamI2V: Camera-Controlled Image-to-Video Diffusion Model](https://arxiv.org/abs/2410.15957)_  
-Original codebase: [CamI2V GitHub](https://github.com/935963004/LaBraM](https://github.com/ZGCTroy/CamI2V/tree/main)
+Original codebase: [CamI2V GitHub](https://github.com/ZGCTroy/CamI2V/tree/main)
 
 ---
 
