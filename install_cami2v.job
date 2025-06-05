@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu_a100
+#SBATCH --gpus=1
+#SBATCH --job-name=InstallEnvironment
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=9
+#SBATCH --time=02:00:00
+#SBATCH --output=slurm_output_%A.out
+
+# Load environment modules
+module purge
+module load 2023
+module load Anaconda3/2023.07-2
+module load CUDA/12.1.1  # Ensures EBROOTCUDATOOLKIT is defined
+
+export CUDA_HOME=$EBROOTCUDATOOLKIT
+
+# Activate conda
+source $EBROOTANACONDA3/etc/profile.d/conda.sh
+conda activate cami2v
+
+# Change to project directory
+cd $HOME/CamI2V/
+
+# Install PyTorch with CUDA 12.1
+conda install -y pytorch==2.4.1 torchvision==0.19.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Install xformers (should match PyTorch version)
+conda install -y xformers -c xformers
+
+# Install Python dependencies (--no-cache-dir avoids memory overhead)
+pip install --no-cache-dir -r requirements.txt

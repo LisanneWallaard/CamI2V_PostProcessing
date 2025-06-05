@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu_h100
+#SBATCH --gpus=1
+#SBATCH --job-name=CamI2V
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=9
+#SBATCH --time=01:30:00
+#SBATCH --output=slurm_output_%A.out
+
+module purge
+module load 2023
+module load Anaconda3/2023.07-2
+
+# Move to project directory
+cd $HOME/CamI2V/
+
+# Activate your environment
+source activate cami2v
+
+# Run your code
+srun python cami2v_gradio_app.py --use_qwenvl_captioner 
