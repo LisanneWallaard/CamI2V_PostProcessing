@@ -51,7 +51,7 @@ The `Images` folder contains the input images used for video generation. Three o
 
 As the focus of the project is not on improving the CamI2V pipeline itself, but rather extending it through post-processing methods, the inference on CamI2V is performed mostly on the default variables and weights from the original [CamI2V GitHub](https://github.com/ZGCTroy/CamI2V/tree/main) setup. An exception was made for the **look-left** movement, where we increased the Trace Exact Ratio (TER) from 0.1 (default) to 0.3 to obtain more camera movement within the same video length. 
 
-No text prompts were used as no qualitative difference was observed when adding them. 
+We generated 3 distinct video movements (**pan-left**, **orbit-up**, **look-left**) from each of the 6 input images, producing a total of 18 initial videos. No text prompts were used as no qualitative difference was observed when adding them. 
 
 ---
 
