@@ -2,8 +2,7 @@
 
 A code base for a project submitted as part of the **UvA Computer Vision 2 Course 2025**.
 
-This work builds upon the paper:  
- _[CamI2V: Camera-Controlled Image-to-Video Diffusion Model](https://arxiv.org/abs/2410.15957)_  
+This work builds upon the paper: _[CamI2V: Camera-Controlled Image-to-Video Diffusion Model](https://arxiv.org/abs/2410.15957)_  
 Original codebase: [CamI2V GitHub](https://github.com/ZGCTroy/CamI2V/tree/main)
 
 ---
@@ -24,7 +23,16 @@ However, the study also highlights that inherent artifacts from the base generat
 
 ##  CamI2V 
 
-In the CamI2V folder, you can find the ReadMe and corresponding code of the original [CamI2V GitHub](https://github.com/ZGCTroy/CamI2V/tree/main). This ReadMe contains all steps necessary to run inference. We downloaded the [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/blob/main/512_cami2v_100k.pt) for higher resolution and advanced camera control. We also downloaded [Qwen2-VL Captioner](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct-AWQ) to add a caption to your custom imaged when generating videos.  [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/blob/main/512_cami2v_100k.pt) model should be put in the `ckpts` folder and [Qwen2-VL Captioner](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct-AWQ) in the `pretrained_models` folder. To run this dashboard on Snellius, we...
+In the CamI2V folder, you can find the ReadMe and corresponding code of the original [CamI2V GitHub](https://github.com/ZGCTroy/CamI2V/tree/main). This ReadMe contains all steps necessary to run inference. We downloaded the [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/blob/main/512_cami2v_100k.pt) for higher resolution and advanced camera control. We also downloaded [Qwen2-VL Captioner](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct-AWQ) to add a caption to your custom imaged when generating videos.  [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/blob/main/512_cami2v_100k.pt) model should be put in the `ckpts` folder and [Qwen2-VL Captioner](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct-AWQ) in the `pretrained_models` folder.
+
+To run this dashboard on Snellius, we have `env_cami2v.job` that installs the environment and `install_cami2v` that installs some extra dependcies in the environment on snellius. `cami2v.job` runs the dashboard for how long you want. In order to connect the dashboard to your localhost, you should take some extra steps. Assuming you have already installed your environment, the following steps should be taken to run CamI2V on Snellius connected to your localhost:
+1. Login: <ssh -X scurXXXX@snellius.surf.nl>,
+2. <sbatch cami2v.job>,
+3. <squeue>,
+4. Find node under nodelist (i.e. gcn25),
+5. Open new powershell,
+6. <ssh -L 7860:localhost:7860 -J scurXXXX@snellius.surf.nl scurXXXX@gcnXX> (adjust node if different),
+7. Open http://localhost:7860/ in browse
 
 
 The `Images` folder contains the images we generated videos from...settings...
