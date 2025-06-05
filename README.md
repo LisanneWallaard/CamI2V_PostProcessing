@@ -22,7 +22,10 @@ Experiments were conducted on diverse indoor scenes, assessing performance using
 
 ##  CamI2V 
 
+In the CamI2V folder, you can find the ReadMe and corresponding code of the original [CamI2V GitHub](https://github.com/ZGCTroy/CamI2V/tree/main). This ReadMe contains all steps necessary to run inference. We downloaded the [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/blob/main/512_cami2v_100k.pt) for higher resolution and advanced camera control. We also downloaded [Qwen2-VL Captioner](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct-AWQ) to add a caption to your custom imaged when generating videos.  [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/blob/main/512_cami2v_100k.pt) model should be put in the `ckpts` folder and [Qwen2-VL Captioner](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct-AWQ) in the `pretrained_models` folder. To run this dashboard on Snellius, we...
 
+
+The `Images` folder contains the images we generated videos from...settings...
 
 ##  PostProcessing Methods
 
