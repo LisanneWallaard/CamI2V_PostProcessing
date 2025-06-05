@@ -29,6 +29,7 @@ We downloaded the [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/bl
 
 > Place the [CamI2V_512x320@100k](https://huggingface.co/MuteApo/CamI2V/blob/main/512_cami2v_100k.pt) model in the `ckpts` folder and the [Qwen2-VL Captioner](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct-AWQ) model in the `pretrained_models` folder.
 
+### Running CamI2V on Snellius
 
 To run this dashboard on Snellius, we have several job files:
 - `env_cami2v.job` sets up the environment
@@ -44,11 +45,15 @@ In order to connect the dashboard to your localhost, you should take some extra 
 6. Create an SSH tunnel `ssh -L 7860:localhost:7860 -J scurXXXX@snellius.surf.nl scurXXXX@gcnXX` (replace `XX` with your actual node, adjust node if different)
 7. Open [http://localhost:7860/](http://localhost:7860/) in your browser
 
+---
+
 The `Images` folder contains the input images used for video generation. Three of these images were provided by **3DUniversum**, the stakeholder of this project, and the other three are from the RealEstate10K dataset. 
 
 As the focus of the project is not on improving the CamI2V pipeline itself, but rather extending it through post-processing methods, the inference on CamI2V is performed mostly on the default variables and weights from the original [CamI2V GitHub](https://github.com/ZGCTroy/CamI2V/tree/main) setup. An exception was made for the **look-left** movement, where we increased the Trace Exact Ratio (TER) from 0.1 (default) to 0.3 to obtain more camera movement within the same video length. 
 
 No text prompts were used as no qualitative difference was observed when adding them. 
+
+---
 
 ##  PostProcessing Methods
 
