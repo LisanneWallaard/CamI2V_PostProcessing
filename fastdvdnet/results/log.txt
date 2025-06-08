@@ -1,0 +1,3 @@
+2025-05-19 15:59:00,129 - Finished denoising ./input_frames/
+2025-05-19 15:59:00,131 - 	Denoised 16 frames in 771.775s, loaded seq in 5.318s
+2025-05-19 15:59:00,132 - 	PSNR noisy 18.5884dB, PSNR result 39.2640dB
