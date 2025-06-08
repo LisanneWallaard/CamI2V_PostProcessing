@@ -57,4 +57,9 @@ We generated 3 distinct video movements (**pan-left**, **orbit-up**, **look-left
 
 ##  PostProcessing Methods
 
+### FastDVDNet (denoising)
+The `fastdvdnet` folder includes both the original code and the README file from the [FastDVDNet GitHub] (https://github.com/m-tassano/fastdvdnet). The README provides all the essential instructions for running inference, and the project can be run locally.
+
+
+
 
