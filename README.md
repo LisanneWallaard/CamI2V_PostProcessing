@@ -61,5 +61,24 @@ We generated 3 distinct video movements (**pan-left**, **orbit-up**, **look-left
 The `fastdvdnet` folder includes both the original code and the README file from the [FastDVDNet GitHub] (https://github.com/m-tassano/fastdvdnet). The README provides all the essential instructions for running inference, and the project can be run locally.
 
 
+### Upscale-A-Video (Upscaling)
 
+This guide explains how to set up the environment and run video upscaling using [Upscale-A-Video](https://github.com/sczhou/Upscale-A-Video) on the Snellius supercomputer.
 
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sczhou/Upscale-A-Video.git
+   ```
+
+2. **Create the Conda environment by submitting the job file:**
+   ```bash
+   sbatch env_uav.job
+   ```
+
+3. **Upscale your video by submitting the upscaling job:**
+   ```bash
+   sbatch uav.job
+   ```
+
+> **Note:**  
+> Edit `uav.job` to specify your input/output paths and any Upscale-A-Video options as needed.
